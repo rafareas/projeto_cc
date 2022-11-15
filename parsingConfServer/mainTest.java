@@ -10,7 +10,10 @@ public class mainTest {
 
         String path = obj.nextLine();
         cn.setConfElements(path);
-        cn.getDomainDB();
-        System.out.println("Path " + path + " lido corretamente e configurado");
+        System.out.println("Path " + path + " lido corretamente");
+        if (cn.isSP()){
+            System.out.println("É um SP!");
+        }
+
     }
 }

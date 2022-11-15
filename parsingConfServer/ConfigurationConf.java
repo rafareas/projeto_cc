@@ -14,7 +14,7 @@ public class ConfigurationConf {
 
 
     public void setConfElements(String str) {
-        System.out.printf("\nConteúdo do arquivo do ficheiro de configuração: \n");
+        //System.out.printf("\nConteúdo do arquivo do ficheiro de configuração: \n");
 
         //"C:/Users/rafael/Documents/UNIVERSIDADE/Comunicação de Computadores/CC_project/parsingConfServer/ficheiroConf.txt"
 
@@ -28,35 +28,26 @@ public class ConfigurationConf {
                 ArrayList<String> list = new ArrayList<String>(Arrays.asList(linha.split(" ")));
 
                 if (!(list.get(0).equals("#"))) {
-                    //ArrayList<ConfElements> confElements = new ArrayList<ConfElements>();
-
                     confElements.add(new ConfElements(list.get(0), list.get(1), list.get(2)));
-
-
                 }
                 linha = lerArq.readLine();
-
             }
 
         } catch (IOException e) {
             System.err.printf("Erro na abertura do arquivo: %s.\n",
                     e.getMessage());
         }
-        System.out.println(confElements);
+        //System.out.println(confElements);
     }
 
-    public String getDomainDB() {
-        System.out.println("entrou1\n");
-        for (Iterator iter = confElements.iterator(); iter.hasNext(); ) {
-            System.out.println("entrou2\n");
-            System.out.println(confElements.get(2));
-            if (confElements.get(1).equals("DB")) {
-                System.out.println("entrou3\n");
-                return String.valueOf(confElements.get(1));
+
+    public boolean isSP() {
+        for (int counter = 0; counter < confElements.size();counter++){
+            if (confElements.get(counter).getTipoValor().equals("DB")){
+                return true;
             }
-            System.out.println(iter.next());
         }
-        return null;
+        return false;
     }
 }
 
