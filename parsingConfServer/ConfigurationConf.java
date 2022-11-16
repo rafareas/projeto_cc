@@ -5,12 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
+
 
 public class ConfigurationConf {
 
     private ArrayList<ConfElements> confElements = new ArrayList<>();
-    private String path;
+
 
 
     public void setConfElements(String str) {

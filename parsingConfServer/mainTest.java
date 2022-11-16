@@ -13,6 +13,7 @@ public class mainTest {
         System.out.println("Path " + path + " lido corretamente");
         if (cn.isSP()){
             System.out.println("É um SP!");
+            System.out.println("fazer metodos para confirmaçao\n");
         }
 
     }
