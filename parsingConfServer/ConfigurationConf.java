@@ -11,10 +11,7 @@ public class ConfigurationConf {
 
     private ArrayList<ConfElements> confElements = new ArrayList<>();
 
-
-
     public void setConfElements(String str) {
-        //System.out.printf("\nConteúdo do arquivo do ficheiro de configuração: \n");
 
         //"C:/Users/rafael/Documents/UNIVERSIDADE/Comunicação de Computadores/CC_project/parsingConfServer/ficheiroConf.txt"
 
@@ -41,6 +38,7 @@ public class ConfigurationConf {
     }
 
 
+    //
     public boolean isSP() {
         for (int counter = 0; counter < confElements.size();counter++){
             if (confElements.get(counter).getTipoValor().equals("DB")){
@@ -48,6 +46,12 @@ public class ConfigurationConf {
             }
         }
         return false;
+    }
+
+    //deve procurar entradas SS para saber quais são os IPs
+    //autorizados a fazer o download da DB (transferência de zona).
+    public ArrayList<String> searchSSIP(){
+
     }
 }
 
