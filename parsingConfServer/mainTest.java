@@ -11,10 +11,7 @@ public class mainTest {
         String path = obj.nextLine();
         cn.setConfElements(path);
         System.out.println("Path " + path + " lido corretamente");
-        if (cn.isSP()){
-            System.out.println("É um SP!");
-            System.out.println("fazer metodos para confirmaçao\n");
-        }
+        cn.isSP();
 
     }
 }

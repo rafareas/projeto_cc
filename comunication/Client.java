@@ -21,6 +21,5 @@ public class Client {
 
         socket.send(reg);
 
-
     }
 }

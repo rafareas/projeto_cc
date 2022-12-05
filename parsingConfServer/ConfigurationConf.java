@@ -25,6 +25,7 @@ public class ConfigurationConf {
                 ArrayList<String> list = new ArrayList<String>(Arrays.asList(linha.split(" ")));
 
                 if (!(list.get(0).equals("#"))) {
+
                     confElements.add(new ConfElements(list.get(0), list.get(1), list.get(2)));
                 }
                 linha = lerArq.readLine();
@@ -39,20 +40,32 @@ public class ConfigurationConf {
 
 
     //
-    public boolean isSP() {
+    public ArrayList<String> isSP() {
+        ArrayList<String> ip = new ArrayList<String>();
         for (int counter = 0; counter < confElements.size();counter++){
             if (confElements.get(counter).getTipoValor().equals("DB")){
-                return true;
+                System.out.println("É um SP!");
+                for (int count = 0; count < confElements.size();count++){
+                    if (confElements.get(count).getTipoValor().equals("SS")){
+                        ip.add(confElements.get(count).getValorAssParametro());
+                    }
+                }
+                System.out.println(ip);
+                return ip;
+            }else {
+                System.out.println("Não é um SP, logo é um SS!");
+                for (int count = 0; count < confElements.size();count++){
+                    if (confElements.get(count).getTipoValor().equals("SP")){
+                        ip.add(confElements.get(count).getValorAssParametro());
+                    }
+                }
+                return ip;
             }
         }
-        return false;
+        return null;
     }
 
-    //deve procurar entradas SS para saber quais são os IPs
-    //autorizados a fazer o download da DB (transferência de zona).
-    public ArrayList<String> searchSSIP(){
 
-    }
 }
 
 

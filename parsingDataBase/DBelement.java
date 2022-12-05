@@ -6,15 +6,15 @@ public class DBelement {
     private String parametro;
     private String tipoValor;
     private String valor;
-    private int ttl;
-    private int prioridade;
+    private String ttl;
+    //private int prioridade;
 
-    public DBelement(String parametro, String tipoValor, String valor, int ttl,int prioridade){
+    public DBelement(String parametro, String tipoValor, String valor, String ttl){
         this.parametro = parametro;
         this.tipoValor = tipoValor;
         this.valor = valor;
         this.ttl = ttl;
-        this.prioridade = prioridade;
+        //this.prioridade = prioridade;
     }
 
     public DBelement(DBelement dataBase) {
@@ -22,7 +22,7 @@ public class DBelement {
         this.tipoValor = dataBase.getTipoValor();
         this.valor = dataBase.getValor();
         this.ttl = dataBase.getTtl();
-        this.prioridade = dataBase.getPrioridade();
+        //this.prioridade = dataBase.getPrioridade();
     }
 
     public String getParametro() {
@@ -49,21 +49,27 @@ public class DBelement {
         this.valor = valor;
     }
 
-    public int getTtl() {
+    public String getTtl() {
         return ttl;
     }
 
-    public void setTtl(int ttl) {
+    public void setTtl(String ttl) {
         this.ttl = ttl;
     }
 
+    /*
     public int getPrioridade() {
         return prioridade;
     }
 
+     */
+
+    /*
     public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
+
+     */
 
     @Override
     public boolean equals(Object o) {
@@ -84,11 +90,6 @@ public class DBelement {
 
     @Override
     public String toString() {
-        return "DataBase{" +
-                "parametro='" + parametro + '\'' +
-                ", tipoValor='" + tipoValor + '\'' +
-                ", valor='" + valor + '\'' +
-                ", ttl='" + ttl + '\'' +
-                '}';
+        return this.parametro + ";" + this.tipoValor + ";" + this.valor + ";" + this.ttl;
     }
 }
