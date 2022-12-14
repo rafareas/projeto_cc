@@ -1,14 +1,10 @@
 package parsingDataBase;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ServerDNS {
 
@@ -28,7 +24,7 @@ public class ServerDNS {
         StringBuilder sb = data(buf);
         //mensagem dns
         String dns = sb.toString();
-        System.out.println(dns);
+        System.out.println("Recebeu a mensagem: " + dns);
 
         //metodo que faz split da string enviada do cliente
         String[] arq = dns.split(";");
@@ -41,15 +37,33 @@ public class ServerDNS {
         ArrayList<String> extraValues = new ArrayList<>();
         ArrayList<String> extraValuesA = new ArrayList<>();
 
+        String[] splitDomain = domain.split(".");
+        System.out.println(splitDomain.toString());
+        /*
+        for (int i = 0; i < splitDomain.length; i++){
+            System.out.println(splitDomain[i]);
+        }
+
+        if (splitDomain.length > 2){
+            String[] totDomain = new String[2];
+            for (int i = 1; i <= 2; i++){
+                totDomain[i] = splitDomain[i];
+            }
+            domain = totDomain.toString();
+        }
+
+         */
+        System.out.println(domain);
+
         // Constroi uma lista de responseValues : ArrayList<String> responseValues = new ArrayList<>();
         responseValues = read.getResponseValues(dataBase,responseValues,domain,type);
-
+        System.out.println(responseValues);
         // Constroi uma lista de authoritiesValues : ArrayList<String> authoritiesValues = new ArrayList<>();
         authoritiesValues = read.getAuthoritiesValues(dataBase,authoritiesValues,domain,type);
-
+        System.out.println(authoritiesValues);
         //Constroi uma lista de extraValues do tipo A para os responseValues
         extraValues = read.getExtraValues(dataBase,responseValues,extraValues);
-
+        System.out.println(extraValues);
         //Constroi uma lista de ExtraValues do tipo A para os authoritiesValues
         extraValuesA = read.getExtraValues(dataBase,authoritiesValues,extraValuesA);
 
