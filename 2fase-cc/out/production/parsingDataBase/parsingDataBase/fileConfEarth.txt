@@ -1,0 +1,7 @@
+# Configuration file for primary server for europa.earth.
+europa.earth DB C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL/europa-earth.txt
+europa.earth SS 193.137.100.250
+europa.earth SS 193.136.130.251
+europa.earth DD 127.0.0.1
+europa.earth LG C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL
+all LG C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL

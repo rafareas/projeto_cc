@@ -1,0 +1,7 @@
+# Configuration file for primary server for america.moon.
+america.moon DB C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL/america-moon.txt
+america.moon SS 193.137.100.250
+america.moon SS 193.136.130.251
+america.moon DD 127.0.0.1
+america.moon LG C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL
+all LG C:\Users\rafael\Documents\UNIVERSIDADE\Comunicação de Computadores\CC-TP2-G05.04-MATERIAL

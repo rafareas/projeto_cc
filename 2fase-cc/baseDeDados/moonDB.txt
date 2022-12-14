@@ -1,0 +1,31 @@
+# DNS database file for domain moon.
+moon. SOASP ns1.europa.earth. 86400
+moon. SOAADMIN dns\.admin.earth. 86400
+moon. SOASERIAL 0117102022 86400
+moon. SOAREFRESH 14400 86400
+moon. SOARETRY 3600 86400
+moon. SOAEXPIRE 604800 86400
+moon. NS ns1.earth. 86400
+moon. NS ns2.earth. 86400
+moon. NS ns3.earth. 86400
+america.moon. NS ns1.america.moon.
+america.moon. NS ns2.america.moon.
+america.moon. NS ns3.america.moon.
+moon. MX mx1.moon. 86400
+moon.. MX mx2.moon. 86400
+ns1.moon. A 193.136.130.250 86400
+ns2.moon. A 193.137.100.250 86400
+ns3.moon. A 193.136.130.251 86400
+ns1.america.moon. A 193.136.130.250 86400
+ns2.america.moon. A 193.137.100.250 86400
+ns3.america.moon. A 193.136.130.251 86400
+mx1.moon. A 193.136.130.200 86400
+mx2.moon. A 193.136.130.201 86400
+www1.moon. A 193.136.130.80 86400
+www2.moon. A 193.136.130.81 86400
+ftp.moon. A 193.136.130.20 86400
+sp.moon. CNAME ns1 86400
+ss1.moon. CNAME ns2 86400
+ss2.moon. CNAME ns3 86400
+mail1 CNAME mx1 86400
+mail2 CNAME mx2 86400
