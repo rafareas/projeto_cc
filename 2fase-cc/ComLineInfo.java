@@ -4,25 +4,67 @@ import java.net.InetAddress;
 import java.util.Objects;
 
 public class ComLineInfo {
-    private InetAddress ip;
     private String msgId;
+    private String flag;
+    private int response_code;
+    private int n_values;
+    private int n_authoraties;
+    private int n_extra_values;
     private String name;
     private String type;
 
-    public ComLineInfo(InetAddress ip,String msgId, String name, String type) {
-        this.ip = ip;
+    public ComLineInfo(String msgId, String flag, int response_code, int n_values, int n_authoraties, int n_extra_values,String name, String type) {
+        this.flag = flag;
         this.msgId = msgId;
+        this.response_code = response_code;
+        this.n_values = n_values;
+        this.n_authoraties = n_authoraties;
+        this.n_extra_values = n_extra_values;
         this.name = name;
         this.type = type;
     }
 
-    public InetAddress getIp() {
-        return ip;
+
+    public String getFlag() {
+        return flag;
     }
 
-    public void setIp(InetAddress ip) {
-        this.ip = ip;
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
+
+    public int getResponse_code() {
+        return response_code;
+    }
+
+    public void setResponse_code(int response_code) {
+        this.response_code = response_code;
+    }
+
+    public int getN_values() {
+        return n_values;
+    }
+
+    public void setN_values(int n_values) {
+        this.n_values = n_values;
+    }
+
+    public int getN_authoraties() {
+        return n_authoraties;
+    }
+
+    public void setN_authoraties(int n_authoraties) {
+        this.n_authoraties = n_authoraties;
+    }
+
+    public int getN_extra_values() {
+        return n_extra_values;
+    }
+
+    public void setN_extra_values(int n_extra_values) {
+        this.n_extra_values = n_extra_values;
+    }
+
 
     public String getMsgId() {
         return msgId;
@@ -53,16 +95,16 @@ public class ComLineInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ComLineInfo that = (ComLineInfo) o;
-        return Objects.equals(getIp(), that.getIp()) && Objects.equals(getMsgId(), that.getMsgId()) && Objects.equals(getName(), that.getName()) && Objects.equals(getType(), that.getType());
+        return getResponse_code() == that.getResponse_code() && getN_values() == that.getN_values() && getN_authoraties() == that.getN_authoraties() && getN_extra_values() == that.getN_extra_values()  && Objects.equals(getMsgId(), that.getMsgId()) && Objects.equals(getFlag(), that.getFlag()) && Objects.equals(getName(), that.getName()) && Objects.equals(getType(), that.getType());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getIp(), getMsgId(), getName(), getType());
+        return Objects.hash( getMsgId(), getFlag(), getResponse_code(), getN_values(), getN_authoraties(), getN_extra_values(), getName(), getType());
     }
 
     @Override
     public String toString() {
-        return this.msgId +  ";" + this.ip + ";" + this.name + ";" + this.type;
+        return this.msgId +  "," + this.flag + "," + this.response_code + "," + this.n_values + "," + this.n_authoraties + "," + this.n_extra_values + ";" + this.name + "," + this.type + ";";
     }
 }

@@ -12,7 +12,6 @@ public class ReadDataBase {
     private ArrayList<DBelement> dataBase = new ArrayList<>();
 
     public ArrayList<DBelement> ReadDataBase(String str) {
-        //C:/Users/rafael/Documents/UNIVERSIDADE/Comunicação de Computadores/projeto_CC/projeto_cc/parsingDataBase/baseDados.txt
         try {
             FileReader arq = new FileReader(str);
             BufferedReader lerArq = new BufferedReader(arq);
@@ -35,6 +34,51 @@ public class ReadDataBase {
         return dataBase;
     }
 
+    public int searchDomainDataBase(ArrayList<DBelement> dataBase, String domain){
+        int achou = 0;
+        for (int i = 0; i < dataBase.size() ; i++){
+            if (dataBase.get(i).getParametro().equals(domain)){
+                    achou = 1;
+                }
+        }
+        return achou;
+    }
+
+    public int searchDataBase(ArrayList<DBelement> dataBase, String domain,String type){
+        int achou = 0;
+        for (int i = 0; i < dataBase.size() ; i++){
+            if (dataBase.get(i).getParametro().equals(domain)){
+                if (dataBase.get(i).getTipoValor().equals(type)){
+                    achou = 1;
+                }
+            }
+        }
+        return achou;
+    }
+
+    public int searchNSDataBase(ArrayList<DBelement> dataBase, String domain){
+        int achou = 0;
+        for (int i = 0; i < dataBase.size() ; i++){
+            if (dataBase.get(i).getParametro().equals(domain)){
+                if (dataBase.get(i).getTipoValor().equals("NS")){
+                    achou = 1;
+                }
+            }
+        }
+        return achou;
+    }
+
+    public String searchIP(ArrayList<DBelement> dataBase, String domain){
+        String ip = null;
+        for (int i = 0; i < dataBase.size() ; i++){
+            if (dataBase.get(i).getParametro().equals(domain)){
+                ip = dataBase.get(i).getParametro();
+            }
+        }
+        return ip;
+    }
+
+
     public ArrayList<String> getResponseValues(ArrayList<DBelement> dataBase, ArrayList<String>responseValues, String domain, String type){
         for (int count = 0; count<dataBase.size(); count++){
             if (dataBase.get(count).getParametro().equals(domain)){
@@ -47,7 +91,7 @@ public class ReadDataBase {
         return responseValues;
     }
 
-    public ArrayList<String> getAuthoritiesValues(ArrayList<DBelement> dataBase, ArrayList<String> authoritiesValues, String domain, String type){
+    public ArrayList<String> getAuthoritiesValues(ArrayList<DBelement> dataBase, ArrayList<String> authoritiesValues, String domain){
         for (int count = 0; count<dataBase.size(); count++){
             if (dataBase.get(count).getParametro().equals(domain)){
                 if (dataBase.get(count).getTipoValor().equals("NS")){

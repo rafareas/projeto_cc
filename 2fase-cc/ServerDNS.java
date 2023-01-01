@@ -17,10 +17,10 @@ public class ServerDNS {
         byte[] buf = new byte[256];
         ReadDataBase read = new ReadDataBase();
         ArrayList<DBelement> dataBase = new ArrayList<>();
-        dataBase = read.ReadDataBase("C:/Users/rafael/Documents/UNIVERSIDADE/Comunicação de Computadores/CC-TP2-G05.04-MATERIAL/europaEarthDB.txt");
+        dataBase = read.ReadDataBase("C:/Users/rafael/Documents/UNIVERSIDADE/Comunicacao_de_Computadores/2fase-cc/baseDeDados/europaEarthDB.txt");
 
         DatagramPacket DpReceive = new DatagramPacket(buf,buf.length);
-        DatagramSocket ds = new DatagramSocket(5555);
+        DatagramSocket ds = new DatagramSocket(5555,InetAddress.getByName("127.0.0.1"));
 
         //recebeu a data em byte buf
         ds.receive(DpReceive);
@@ -53,7 +53,7 @@ public class ServerDNS {
         responseValues = read.getResponseValues(dataBase,responseValues,domain,type);
         System.out.println("Response Values: " + responseValues);
         // Constroi uma lista de authoritiesValues : ArrayList<String> authoritiesValues = new ArrayList<>();
-        authoritiesValues = read.getAuthoritiesValues(dataBase,authoritiesValues,domain,type);
+        authoritiesValues = read.getAuthoritiesValues(dataBase,authoritiesValues,domain);
         System.out.println("Authorities values: " + authoritiesValues);
         //Constroi uma lista de extraValues do tipo A para os responseValues
         extraValues = read.getExtraValues(dataBase,responseValues,extraValues);
@@ -112,7 +112,7 @@ public class ServerDNS {
                 extra_Values.append(",\n");
         }
 
-        StringBuilder resultado =new StringBuilder();
+        StringBuilder resultado = new StringBuilder();
         resultado.append(header).append(response_Values).append(authorities_Values).append(extra_Values);
 
         /*

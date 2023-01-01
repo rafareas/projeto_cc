@@ -1,29 +1,21 @@
-# DNS database file for domain example.com
-# It also includes a pointer to the primary server
-# of the smaller.example.com subdomain
-america.moon. SOASP ns1.america.moon. 86400
+america.moon. SOASP usa.america.moon. 86400
 america.moon. SOAADMIN dns\.admin.america.moon. 86400
 america.moon. SOASERIAL 0117102022 86400
 america.moon. SOAREFRESH 14400 86400
 america.moon. SOARETRY 3600 86400
 america.moon. SOAEXPIRE 604800 86400
-america.moon. NS ns1.america.moon. 86400
-america.moon. NS ns2.america.moon. 86400
-america.moon. NS ns3.america.moon. 86400
-Smaller.america.moon. NS sp.smaller.america.moon.
+america.moon. NS usa.america.moon. 86400
+america.moon. NS espanha.america.moon. 86400
+america.moon. NS marte.america.moon. 86400
 america.moon. MX mx1.america.moon. 86400
 america.moon. MX mx2.america.moon. 86400
-ns1 A 193.136.130.250 86400
-ns2 A 193.137.100.250 86400
-ns3 A 193.136.130.251 86400
-sp.smaller A 193.140.90.11 86400
-mx1 A 193.136.130.200 86400
-mx2 A 193.136.130.201 86400
-www A 193.136.130.80 86400
-www A 193.136.130.81 86400
-ftp A 193.136.130.20 86400
-sp CNAME ns1 86400
-ss1 CNAME ns2 86400
-ss2 CNAME ns3 86400
+usa.america.moon. A 127.0.0.5 86400
+espanha.america.moon. A 193.137.100.250 86400
+marte.america.moon. A 193.136.130.251 86400
+mx1.america.moon. A 193.136.130.200 86400
+mx2.america.moon. A 193.136.130.201 86400
+sp.america.moon. CNAME usa 86400
+ss1.america.moon CNAME espanha 86400
+ss2.america.moon CNAME marte 86400
 mail1 CNAME mx1 86400
 mail2 CNAME mx2 86400

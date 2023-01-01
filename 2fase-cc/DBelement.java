@@ -7,22 +7,20 @@ public class DBelement {
     private String tipoValor;
     private String valor;
     private String ttl;
-    //private int prioridade;
 
     public DBelement(String parametro, String tipoValor, String valor, String ttl){
         this.parametro = parametro;
         this.tipoValor = tipoValor;
         this.valor = valor;
         this.ttl = ttl;
-        //this.prioridade = prioridade;
     }
+
 
     public DBelement(DBelement dataBase) {
         this.parametro = dataBase.getParametro();
         this.tipoValor = dataBase.getTipoValor();
         this.valor = dataBase.getValor();
         this.ttl = dataBase.getTtl();
-        //this.prioridade = dataBase.getPrioridade();
     }
 
     public String getParametro() {
@@ -57,26 +55,13 @@ public class DBelement {
         this.ttl = ttl;
     }
 
-    /*
-    public int getPrioridade() {
-        return prioridade;
-    }
-
-     */
-
-    /*
-    public void setPrioridade(int prioridade) {
-        this.prioridade = prioridade;
-    }
-
-     */
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DBelement dataBase = (DBelement) o;
-        return Objects.equals(getParametro(), dataBase.getParametro()) && Objects.equals(getTipoValor(), dataBase.getTipoValor()) && Objects.equals(getValor(), dataBase.getValor()) && Objects.equals(getTtl(), dataBase.getTtl());
+        DBelement dBelement = (DBelement) o;
+        return Objects.equals(getParametro(), dBelement.getParametro()) && Objects.equals(getTipoValor(), dBelement.getTipoValor()) && Objects.equals(getValor(), dBelement.getValor()) && Objects.equals(getTtl(), dBelement.getTtl()) ;
     }
 
     @Override
